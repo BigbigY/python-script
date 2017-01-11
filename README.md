@@ -22,8 +22,6 @@
 1. 备份项目脚本，根据目录
 1. 备份结构：
 
-    [root@node2-web 20161208]# ll
-    total 505632
-    -rw-r--r-- 1 root root  22730178 Dec  8 02:00 app.tar.gz
-    -rw-r--r-- 1 root root 116510319 Dec  8 02:00 rqb.tar.gz
-    -rw-r--r-- 1 root root 378511431 Dec  8 02:00 rqt.tar.gz
+[root@node2-web 20161208]# ls
+
+app.tar.gz rqb.tar.gz rqt.tar.gz
