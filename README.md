@@ -17,3 +17,13 @@
 ## 3、search_key_file.py ##
 1. 查找日志或者文件中出现指定关键字的次数并过滤出来
 1. 可指定多个关键字，显示结果行
+
+## 4、back_project.py ##
+1. 备份项目脚本，根据目录
+1. 备份结构：
+
+    [root@node2-web 20161208]# ll
+    total 505632
+    -rw-r--r-- 1 root root  22730178 Dec  8 02:00 app.tar.gz
+    -rw-r--r-- 1 root root 116510319 Dec  8 02:00 rqb.tar.gz
+    -rw-r--r-- 1 root root 378511431 Dec  8 02:00 rqt.tar.gz
