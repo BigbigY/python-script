@@ -1,22 +1,29 @@
 #!/usr/bin/python3
 # -*-coding:utf-8-*-
-# Filename: ²éÕÒÎÄ¼þ¹Ø¼ü×ÖÐ¡³ÌÐò.py
+# Filename: æŸ¥æ‰¾æ–‡ä»¶å…³é”®å­—å°ç¨‹åº.py
 # Author:   yy520it@gmail.com
 # This is a small program to find the key word
 
 import sys
-filename = input('ÇëÊäÈëÄúÒªËÑË÷µÄÂ·¾¶¼°ÎÄµµÃû³Æ:')
+import os
+
+filename = input('è¯·è¾“å…¥æ‚¨è¦æœç´¢çš„è·¯å¾„åŠæ–‡æ¡£åç§°:')
 if len(filename) == 0:
-    sys.exit('²»ÄÜÎª¿Õ!')
+    sys.exit('ä¸èƒ½ä¸ºç©º!')
+
+if os.path.isfile(filename) != True:
+    print("æ–‡ä»¶ä¸å­˜åœ¨!")
+    exit(1)
+
 while True:
-  mubiao = input('ÇëÊäÈëÄúÒªËÑË÷µÄ¹Ø¼ü´Ê:')
+  mubiao = input('è¯·è¾“å…¥æ‚¨è¦æœç´¢çš„å…³é”®è¯:')
   if mubiao == 'exit':
-      sys.exit('»¶Ó­Ê¹ÓÃËÑË÷ÏµÍ³!')
+      sys.exit('æ¬¢è¿Žä½¿ç”¨æœç´¢ç³»ç»Ÿ!')
   if len(mubiao) == 0:
       continue
-  mubiao2 = input('ÇëÊäÈëµÚ¶þ¸ö¹Ø¼ü´Ê£¬ºöÂÔ°´Enter:')
+  mubiao2 = input('è¯·è¾“å…¥ç¬¬äºŒä¸ªå…³é”®è¯ï¼Œå¿½ç•¥æŒ‰Enter:')
   if len(mubiao2) == 0:
-      with open(filename) as f:
+      with open(filename,'r',encoding="utf-8") as f:
           Num = 0
           for line in f:
               line = line.strip('\n')
@@ -24,12 +31,12 @@ while True:
               if index > -1:
                   Num += 1
                   print (line[:index] + ('\033[31;1m%s\033[0m' % mubiao) + line[ index + len(mubiao):])
-      print ('Ò»¹²ÕÒµ½ÁË\033[31;1m%s\033[0m;' % Num)
+      print ('ä¸€å…±æ‰¾åˆ°äº†\033[31;1m%s\033[0m;' % Num)
   if mubiao == 'exit':
-      sys.exit('»¶Ó­Ê¹ÓÃËÑË÷ÏµÍ³!')
+      sys.exit('æ¬¢è¿Žä½¿ç”¨æœç´¢ç³»ç»Ÿ!')
   else:
-      print ('ËÑË÷2¸ö¹Ø¼ü´Ê')
-      with  open(filename) as f:
+      print ('æœç´¢2ä¸ªå…³é”®è¯')
+      with  open(filename,'r',encoding='utf-8') as f:
           Num = 0
           for line in f:
               line = line.strip('\n')
@@ -38,4 +45,4 @@ while True:
               if index > -1 and index2 > -1:
                   Num += 1
                   print (line[:index] + ('\033[31;1m%s\033[0m' % mubiao) + line[index:index2] + ('\033[31;1m%s\033[0m' % mubiao2) + line[ index2 + len(mubiao2):] )
-      print ('Ò»¹²ÕÒµ½ÁË\033[31;1m%s\033[0m;' % Num)
+      print ('ä¸€å…±æ‰¾åˆ°äº†\033[31;1m%s\033[0m;' % Num)
