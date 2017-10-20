@@ -25,7 +25,6 @@ while True:
   if len(mubiao2) == 0:
       with open(filename,'r',encoding="utf-8") as f:
           Num = 0
-          print(f.read())
           for line in f:
               line = line.strip('\n')
               index = line.find(mubiao)
