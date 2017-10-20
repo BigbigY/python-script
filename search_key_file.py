@@ -32,7 +32,7 @@ while True:
                   Num += 1
                   print (line[:index] + ('\033[31;1m%s\033[0m' % mubiao) + line[ index + len(mubiao):])
       print ('一共找到了\033[31;1m%s\033[0m;' % Num)
-  if mubiao == 'exit':
+  elif mubiao == 'exit':
       sys.exit('欢迎使用搜索系统!')
   else:
       print ('搜索2个关键词')
